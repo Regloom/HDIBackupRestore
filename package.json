@@ -29,6 +29,9 @@
     "build": "mbt build --mtar archive",
     "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
     "bad": "npm run build && npm run deploy",
+    "cf-login": "cf login --sso -a https://api.cf.eu10.hana.ondemand.com",
+    "cf-login4": "cf login --sso -a https://api.cf.eu10-004.hana.ondemand.com",
+    "xsuaa-up": "cf update-service HDI-Backup-auth -c xs-security.json",
     "undeploy": "cf undeploy HDI-Backup --delete-services --delete-service-keys --delete-service-brokers"
   },
   "workspaces": [
